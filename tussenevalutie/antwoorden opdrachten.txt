@@ -1,0 +1,182 @@
+1.1
+
+(1.1.1)
+
+AND (&&)
+
+a    b        uitkomst
+true  true      true
+false true      false
+true  false     false
+false false     false
+
+
+(1.1.2)
+OR(||)
+
+a       b    uitkomst
+true   true     true
+false  true     true
+true   false    true
+false  false    false
+
+
+1.2
+
+
+println(3==3);   TRUE
+println(4<=5);   TRUE
+int a = 5;println(3 > a); FALSE
+println(a!=4); TRUE
+println(2>1); TRUE
+
+
+1.3
+
+int a = 5;
+println(a > 4 && false);  FALSE
+println(a >= 5 && a > 1);  TRUE
+println(a == 5 && 3 == 3);  TRUE
+println(a != 5 || 3 == 3);  TRUE
+println(5-1+3 == 3 || a == a); TRUE
+
+
+1.4
+
+b
+
+1.5
+
+int temperatuurCelsius = 28;
+
+if(temperatuurCelsius >= 25 && temperatuurCelsius < 30){
+ println("warm");
+}else{
+  println("lukewarm");
+}
+
+
+1.5.1
+
+int temperatuurCelsius = 28;
+
+if(temperatuurCelsius >= 30){
+ println("heet");
+}else{
+  println("het is nu " + temperatuurCelsius + (" graden"));
+}
+
+
+1.6
+
+int speler1 = 30;
+int speler2 = 30;
+
+if(speler1 > speler2){
+ println("speller 1 heeft gewonnen");
+}else if(speler2 > speler1){
+  println("speler 2 heeft gewonnen");
+}else{
+  println("gelijkspel");
+}
+
+
+1.7
+
+
+int x = 12;
+int y = 12;
+
+
+if (x > 10) {
+ x = x - 5;
+ if (x > 10 || y <= 10) {
+  x++;
+  y++;
+ }
+ else {
+  println("hier wil ik zijn");
+ }
+}
+
+
+1.8
+
+int steen1 = 4;
+int steen2 = 1;
+int steen3 = 6;
+int totaal = (steen1 + steen2 + steen3) / 3;
+
+
+if(steen1 == 1 || steen2 == 1 || steen3 == 1){
+ println("MISS!");
+}
+else{
+  println(totaal + " HIT!");
+}
+
+
+
+*1.8.1*
+
+int steen1 = 1;
+int steen2 = 1;
+int steen3 = 1;
+int totaal = (steen1 + steen2 + steen3) / 3;
+
+
+if(steen1 == 1 && steen2 == 1 && steen3 == 1){
+ println("Critical MISS!");
+}
+else if(steen1 == 6 && steen2 == 6 && steen3 == 6){
+  println("TRIPLE KILL!");
+}
+
+
+
+1.9
+
+float cijfer= 7;
+float totcijf= 20;
+float gevolgcijf= 17;
+float procent = Math.round((gevolgcijf / totcijf)*100);
+
+if(cijfer >= 5.5 && procent >= 80){
+  println("geslaagd");
+}
+else{
+  println("gezakt");
+}
+
+
+1.9.1
+
+Klaas was bij 16 lessen aanwezig en haalde een 5.5. Hij is gezakt.
+
+
+1.10 
+
+int voegPuntToeAanScore=1;
+
+boolean spelerRaaktVijand = true;
+boolean spelerPaktAppel = true;
+boolean spelerIsOnoverwinnelijk = false;
+
+
+if(spelerPaktAppel == true){
+ voegPuntToeAanScore++;
+ println(voegPuntToeAanScore);
+}
+
+if(spelerRaaktVijand==true && spelerIsOnoverwinnelijk == true){
+ voegPuntToeAanScore++;
+ println(voegPuntToeAanScore);
+}
+
+if(spelerRaaktVijand==true && spelerIsOnoverwinnelijk == false){
+  println("AF");
+}
+
+1.11
+
+
