@@ -1,15 +1,11 @@
 //8.8 ermee beziggg
+int antwoord = 0;
 int a = 0;
 int b = 1;
-int c = (b+a);
-boolean doorgaan = true;
 
-while(doorgaan){
-  if(c ==21){
-    doorgaan = false;
-    }else{
-      c++;
-      ;
-      println(c);
-    }
+for(int i = 0; i < 10; i++){
+  antwoord = a + b;
+  println(antwoord);
+  a = b;
+  b = antwoord;
 }
