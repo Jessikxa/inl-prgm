@@ -43,7 +43,7 @@ class BankAccount {
   float saldo;
   String eigenaar;
 
-  Bankrekening(int rekeningnummer, float saldo, String eigenaar) {
+  BankAccount(int rekeningnummer, float saldo, String eigenaar) {
     this.rekeningnummer = rekeningnummer;
     this.saldo = saldo;
     this.eigenaar = eigenaar;
@@ -59,8 +59,11 @@ class BankAccount {
   // if(hoeveelheid > 0) ?? moet de if of kan dat ook zonder, want kan geen bedrag <0 storten
 
   void geldstorten(float hoeveelheid ) {
-    hoeveelheid = saldo + hoeveelheid;
+    if (hoeveelheid > 0 ) {
+      saldo = saldo + hoeveelheid;
+    }
   }
+
 
   void details() {
     println("Rekeningnummer: " + rekeningnummer);
@@ -70,10 +73,11 @@ class BankAccount {
 }
 
 void setup() {
-  Bankrekening muneyy = new Bankrekening(314562, 10, "veronica");
-  Bankrekening.details;
-  Bankrekening.geldopnemen(0,75);
-  Bankrekening.geldstorten(250);
+  BankAccount muneyy = new BankAccount(43721, 15, "veronica");
+
+  muneyy.geldopnemen(1);
+  muneyy.geldstorten(15);
+  muneyy.details();
 }
 
 void draw() {
