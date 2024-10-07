@@ -35,8 +35,8 @@
  CNTRL + T == VOOR MEER OVERZICHTELIJKE CODE:D
  
  */
- 
- //15.3
+
+//15.3
 
 class BankAccount {
   int rekeningnummer;
@@ -49,7 +49,7 @@ class BankAccount {
     this.eigenaar = eigenaar;
   }
   void geldopnemen(float hoeveel) {
-    if (hoeveel <= saldo) {
+    if (hoeveel <= saldo && hoeveel > 0) {
       saldo = saldo - hoeveel;
     } else {
       println("Niet genoeg saldo op rekening");
