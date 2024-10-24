@@ -3,49 +3,121 @@
 // int circle = 2;
 /*
 boolean checkIfempty = false;
-
-void checkifempty){
-if(grid/squareVakje == 0){
-  checkIftrue = true;
-}
-}
-if(true){
-  place player symbol
-}
-
-*/
+ 
+ void checkifempty){
+ if(grid/squareVakje == 0){
+ checkIftrue = true;
+ }
+ }
+ if(true){
+ place player symbol
+ }
+ 
+ */
 
 //symb
 /*
 x = line(10,10,50,50);
-    line(10,50,50,10);
-0 = ellipse(mouseX,mouseY,75,75);
-*/
+ line(10,50,50,10);
+ 0 = ellipse(mouseX,mouseY,75,75);
+ */
 
 //restart?
 
-//vakjes
-//class Vakjes(){
+
 //Vakjes(volgorde is van links naar rechts)
 //x en y coordinaten
-//coord  x          y  
+//coord  x          y
 /*
 1 =    0>x<100 && 0>y<100
-2 =  100>x<200 && 0>y<100
-3 =  200>x<300 && 0>y<100
-
-4 =    0>x<100 && 100>y<200
-5 =  100>x<200 && 100>y<200
-6 =  200>x<300 && 100>y<200
-
-7 =    0>x<100 && 200>y<300
-8 =  100>x<200 && 200>y<300
-9 =  200>x<300 && 200>y<300
-
-}*/
+ 2 =  100>x<200 && 0>y<100
+ 3 =  200>x<300 && 0>y<100
+ 
+ 4 =    0>x<100 && 100>y<200
+ 5 =  100>x<200 && 100>y<200
+ 6 =  200>x<300 && 100>y<200
+ 
+ 7 =    0>x<100 && 200>y<300
+ 8 =  100>x<200 && 200>y<300
+ 9 =  200>x<300 && 200>y<300
+ 
+ }*/
 //check array connecten to grid/squares
 int check[] = new int[9];
-void checkWin() { 
+boolean player = true;
+
+//win
+void Grid(){
+  for (int X = 0; X< width; X = X+100) {
+    stroke(0);
+    line(X, 0, X, height);
+  }
+  for (int Y = 0; Y< height; Y = Y+100) {
+    stroke(0);
+    line(0, Y, width, Y);
+  }   
+}
+
+void setup() {
+  size(300, 300);
+}
+
+void draw() {
+  background(105);
+  strokeWeight(2);
+
+  //grid
+  for (int X = 0; X< width; X = X+100) {
+    stroke(0);
+    line(X, 0, X, height);
+  }
+  for (int Y = 0; Y< height; Y = Y+100) {
+    stroke(0);
+    line(0, Y, width, Y);
+  }   
+  
+
+  for (int i = 0; i < check.length; i++) {
+
+    text(check[i], 10, 20*i+20);
+    if (check[i]==1) {
+      noFill();
+      stroke(255);
+      //3 if statements voor y. if(0>y<1) if(3>y<4) if(6>y<7). idk of het zo uitgeschreven moet, want hij reset steeds als het module 0/3/6 is, dus dan maakt het niet uit
+      // get the first line going and practice with win and players -- alternating players and
+      ellipse(50 +(100 *(i % 3)), (50 +(i % 3)), 75, 75);
+    }
+  }
+
+  //mousePressed - draw circle
+
+  if (mouseX >0 && mouseX <100 && mouseY >0 && mouseY<100) {
+    if (mousePressed) {
+      check[0] = 1;
+
+      println(check[0]);
+    }
+  }
+  if (mouseX >100 && mouseX <200 && mouseY >0 && mouseY<100) {
+    if (mousePressed) {
+      check[1] = 1;
+
+      println(check[1]);
+    }
+  }
+  if (mouseX >200 && mouseX <300 && mouseY >0 && mouseY<100) {
+    if (mousePressed) {
+      check[2] = 1;
+
+      println(check[2]);
+    }
+  }
+}
+
+
+
+    
+void checkWin() {
   if (check[0] == check[1] && check[1] == check[2]) {
   } else if (check[3] == check[4] && check[4] == check[5]) {
   } else if (check[6] == check[7] && check[7] == check[8]) {
@@ -55,25 +127,6 @@ void checkWin() {
   } else if (check[0] == check[4] && check[4] == check[8]) {
   } else if (check[2] == check[4] && check[4] == check[6]) {
     println("WIN");
-  }else{//no win en verder spel
-  }
-}
-//win
-
-void setup(){
-  size(300,300);
-  
-}
-void draw(){
-  frameRate(7);
-  background(0);
-  if(mousePressed){
-    if(mouseX >0 && mouseX <100 && mouseY >0 && mouseY<100){
-      check[0] = 1;
-      println("woo");
-    }else{println("boo");}
-    
-    fill(255);
-    ellipse(mouseX,mouseY,75,75);
+  } else {//no win en verder spel
   }
 }
