@@ -88,12 +88,29 @@ void draw() {
       ellipse(50 +(100 *(i % 3)), (50 +(i % 3)), 75, 75);
     }
   }
-
+  /*
+void mouseClicked() {
+  squaresFilled++;
+  if (squaresFilled == 9) {
+    println("ITS A TIE SORRY");
+    gameOverScreen();
+  }
+  win();
+}    not needed. from winsequenceworking sketch
+*/
   //mousePressed - draw circle
+
+
+int playerBoardNumber = 0;
+if (player){
+  playerBoardNumber = 1;
+} else {
+    playerBoardNumber =2; }
+} 
 
   if (mouseX >0 && mouseX <100 && mouseY >0 && mouseY<100) {
     if (mousePressed) {
-      check[0] = 1;
+      check[0] = playerBoardNumber;
 
       println(check[0]);
     }

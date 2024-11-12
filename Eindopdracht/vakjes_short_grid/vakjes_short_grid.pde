@@ -1,3 +1,5 @@
+
+int[] board = new int[9];
 void setup() {
   size(300, 300);
 }
@@ -14,10 +16,18 @@ void draw() {
 
   int x = mouseX/100;
   int y = (mouseY/100)*3;
+  int location = x + y;
+  board(location);
   if (mousePressed) {
     println(x + y);
   }
-}// if(x + y = 0 (vakje 0) {check[0] = bijv 1}
+  
+  //if x + y = 1, dan correspond to index[0] . would that work? if(x + y == 1){board[0] =1;}, etc
+}
+
+
+
+// if(x + y = 0 (vakje 0) {check[0] = bijv 1}
 //     bij ieder vakje
 //for loop die de board checked. als er een 0 is dan gebeurt er niks, als er een 1 staat dan vul je x in,enz
 /*
